@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import ArrowLeftIcon from './icons/left.jpg';
-import ArrowRightIcon from './icons/right.jpg';
 
 function App() {
   const [isLoading,setIsLoading] = useState(false);
+  const [searchValue, setSearchValue] = useState('')
   /*
   Currently loaded vehicles
   */
@@ -46,11 +45,10 @@ function App() {
      * @param leftOrRight - o if its a new search, 1 if its a right pagination action and 2 if its a left pagination action
      * @returns {Promise<void>}
      */
-    const fetchOrchestration = async (currentURL, searchValue, leftOrRight) => {
+    const fetchOrchestration = async (currentURL, searchTempValue, leftOrRight) => {
        try {
            setIsLoading(true);
            console.log('URL to fetch', currentURL)
-           let searchTempValue = searchValue;
            console.log('search value', searchTempValue);
            var nextURL = currentURL
            if (nextURL === defaultURL) {
@@ -143,6 +141,7 @@ function App() {
     const handleSearch = (changeValue) => {
         console.log('search initiated', changeValue);
         fetchOrchestration(defaultURL, changeValue, 0);
+        setSearchValue(changeValue);
     }
 
   useEffect(() => {
@@ -167,6 +166,7 @@ function App() {
                           className="centered-input"
                           title= "Search vehicles"
                           placeholder=""
+                          value = {searchValue}
                           onChange={e => {
                               let changeValue = e.target.value;
                               console.log('search value on change', changeValue)
@@ -197,8 +197,8 @@ function App() {
                               <td>
                               <div className="controls-div">
                                   <label>{Number(minIndexPage)} - {Number(maxIndexPage)} of {Number(totalCount)}</label>
-                                  <button disabled={isLeftButtonDisabled} onClick={handleLeft}><img src={ArrowLeftIcon} alt="Arrow Left" className={isLeftButtonDisabled ? 'disabled': 'icon'}/></button>
-                                  <button disabled={isRightButtonDisabled} onClick={handleRight}><img src={ArrowRightIcon} alt="Arrow Right" className={isRightButtonDisabled ? 'disabled': 'icon'}/></button>
+                                  <button disabled={isLeftButtonDisabled} onClick={handleLeft}>pre</button>
+                                  <button disabled={isRightButtonDisabled} onClick={handleRight}>next</button>
                               </div>
                               </td>
                           </tr>
