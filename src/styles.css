@@ -1,69 +1,59 @@
 .App {
-    font-family: sans-serif;
     width: 80vw;
-    margin-right: auto;
-    margin-left: auto;
     margin-top: 30px;
-    color: #14877c;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .heading {
-    color: #14877c;
-    border-bottom: 1px solid #14877c;
-    margin-bottom: 30px;
+    font-family: sans-serif;
+    font-size: 25px;
+    margin-bottom: 20px;
     padding-bottom: 10px;
 }
 
 button {
     height: 20px;
-    width: 40px;
-    border-radius: 4px;
-    margin-top: 10px;
-    font-size: 15px;
-    display: inline-block;
+    width: 60px;
+    margin-top: 5px;
+    font-family: sans-serif;
+    font-size: 10px;
     text-align: center;
-    user-select: none;
-    font-weight: 600;
-    border-radius: 4px;
-    color: #090606;
-    border: 1px solid #14877c;
     background-color: #ffffff;
-    cursor: pointer;
-    margin: 0px 15px;
-    min-width: 10px;
+    margin: 0px 5px;
+    min-width: 5px;
 }
 
 table {
-    width: 70%;
-    padding: 1em;
-    margin: 0 auto;
+    font-family: sans-serif;
+    font-size: 15px;
+    text-align: left;
+    width: 50%;
     border-collapse: collapse;
+    boxShadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
 }
 
 thead {
-    background-color: #caf0ec;
-    font-size: 16px;
+    background-color: white;
+}
+tr {
+    font-family: sans-serif;
+    font-size: 15px;
+    border: 1px solid black
 }
 
 th {
     text-align: center;
     padding: 8px;
-    background-color: 1px solid #ffffff;
-    color: #14877c;
+    background-color: white;
+    text-align: left;
 }
 td {
     text-align: center;
     padding: 8px;
-}
-
-tr {
-    height: 50px;
-}
-
-tr:nth-child(even) {
-    background-color: #e0e0e0;
+    background-color: white;
+    text-align: left;
 }
 
 .spinner-container {
@@ -94,7 +84,7 @@ tr:nth-child(even) {
 
 .label-cell {
     text-align: center;
-    font-weight: bold;
+    background-color: white;
 }
 
 .input-container {
@@ -104,16 +94,15 @@ tr:nth-child(even) {
 }
 
 .centered-input {
-    width: 300px;
-    padding: 10px;
+    font-family: sans-serif;
+    font-size: 15px;
+    background-color: white;
 }
 
 .controls-div {
-    display: flex;
     justify-content: center;
-    align-items: center;
-    background-color: #f0f0f0;
-    padding: 5px;
+    display: flex;
+    background-color: white;
 }
 
 .icon {

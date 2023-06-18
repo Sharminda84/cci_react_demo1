@@ -159,9 +159,9 @@ function App() {
               ) : (
                 <>
                 <div className="input-container">
-                    <h2>Vehicles</h2>
+                    <h2 className="heading">Vehicles</h2>
                 </div>
-                <div className="input-container">
+                <div className="input-container"  style={{marginBottom: '20px'}}>
                       <input
                           className="centered-input"
                           title= "Search vehicles"
@@ -175,7 +175,7 @@ function App() {
                           }
                       />
                 </div>
-                <table className="centered-table">
+                <table className="centered-table" style={{ boxShadow: '0 5px 15px rgba(0, 0, 0, 0.5)' }} >
                         <thead>
                         <tr>
                             <th>Name</th>
@@ -191,19 +191,14 @@ function App() {
                                     <td lassName="label-cell">{vehicle.length}</td>
                                 </tr>
                             ))}
-                          <tr>
-                              <td></td>
-                              <td></td>
-                              <td>
-                              <div className="controls-div">
-                                  <label>{Number(minIndexPage)} - {Number(maxIndexPage)} of {Number(totalCount)}</label>
-                                  <button disabled={isLeftButtonDisabled} onClick={handleLeft}>pre</button>
-                                  <button disabled={isRightButtonDisabled} onClick={handleRight}>next</button>
-                              </div>
-                              </td>
-                          </tr>
+
                         </tbody>
                     </table>
+                    <div className="controls-div" style={{marginTop: '20px'}}>
+                        <label className="label-cell">{Number(minIndexPage)} - {Number(maxIndexPage)} of {Number(totalCount)}</label>
+                        <button disabled={isLeftButtonDisabled} onClick={handleLeft}>PRE</button>
+                        <button disabled={isRightButtonDisabled} onClick={handleRight}>NEXT</button>
+                    </div>
                 </>)
       }
       </div>
